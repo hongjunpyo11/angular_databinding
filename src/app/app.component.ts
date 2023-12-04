@@ -13,7 +13,7 @@ export class AppComponent {
       type: 'server',
       name: serverData.serverName,
       content: serverData.serverContent
-    })
+    });
   }
 
   onBluePrintAdded(bluePrintData: {serverName: string, serverContent: string}) {
@@ -22,5 +22,13 @@ export class AppComponent {
       name: bluePrintData.serverName,
       content: bluePrintData.serverContent
     });
+  }
+
+  onChangeFirst() {
+    this.serverElements[0].name = 'Changed!';
+  }
+
+  onDestroyFirst() {
+    this.serverElements.splice(0, 1);
   }
 }
